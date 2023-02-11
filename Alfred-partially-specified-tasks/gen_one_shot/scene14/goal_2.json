@@ -1,0 +1,1 @@
+{"goal": ["find_source", "Book1", "AlarmClock1"], "query": ["Put the Book1 on the sofa with AlarmClock1. Do not put it in box.", "Which sofa is AlarmClock1 in?", "Put the Book1 on the sofa with AlarmClock1. Do not put it in box. Which object should we put Book1 on?"]}
