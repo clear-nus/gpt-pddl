@@ -1,0 +1,134 @@
+---
+domain: generated_encoded
+domain_file: generated_domain.pddl
+max_trial: 1000
+n_instances: 500
+start: 1
+end: 100
+instances_template: instance-{}.pddl
+pddl_dir_template: data/pddl_dataset/instances/blocksworld-4ops_obj_{}
+plan_dir_template: data/pddl_dataset/plans/blocksworld-4ops_obj_{}
+
+goal_finetuning_template: data/prob_finetuning_dataset/goal_pred_{}.txt
+plan_finetuning_template: data/plan_finetuning_dataset/goal_pred_{}.txt
+list_finetuning_template: data/list_finetuning_dataset/goal_pred_{}.txt
+lang_finetuning_template: data/lang_finetuning_dataset/goal_pred_{}.txt
+check_finetuning_template: data/check_refined_finetuning_dataset/goal_pred_{}.txt
+
+goal_result_template: results/completion/pddl_files/blocksworld/oneshot-{}-{}.txt
+plan_result_template: results/completion/plan_files/blocksworld/oneshot-{}-{}.txt
+list_result_template: results/completion/list_files/blocksworld/oneshot-{}-{}.txt
+lang_result_template: results/completion/lang_files/blocksworld/oneshot-{}-{}.txt
+check_result_template: results/completion/check_refined_files/blocksworld/oneshot-{}-{}.txt
+
+checker_name_template: "{dataset}_{checker}"
+domain_checker_list: [
+      "obj_list",
+      "color_list",
+      "on_pred",
+      "table_pred",
+      "clear_pred"
+]
+
+model: code-davinci-002
+
+standard_stack:
+  dataset_template: "blocksworld_obj_{obj}_standard_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [4, 8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Fully specified block relations (standard)"
+
+stack_seq_b2t:
+  dataset_template: "blocksworld_obj_{obj}_seq_b2t_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [4, 8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Describe stacks from bottom to top"
+
+stack_seq_t2b:
+  dataset_template: "blocksworld_obj_{obj}_seq_t2b_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [4, 8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Describe stacks from top to bottom"
+
+stack_seq_t2b_rev:
+  dataset_template: "blocksworld_obj_{obj}_seq_t2b_rev_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [4, 8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Describe stacks from top to bottom, reversed example goal predicate order"
+
+constr_h1: # h1 for height of 1 tower
+  dataset_template: "blocksworld_obj_{obj}_h1_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [4, 8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Build a stack that contains X blocks"
+
+
+constr_heq: # heq for height equal
+  dataset_template: "blocksworld_obj_{obj}_heq_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [4, 8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Build exactly X stacks that are of the same height"
+
+constr_hprime:
+  dataset_template: "blocksworld_obj_{obj}_hprime_mode_{mode}"
+  range_dict:
+    train: [0, 50]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_lang_generation.yaml"
+  description: "Build a stack with a prime number of blocks"
+
+constr_c1: # ceq for color of 1 tower
+  dataset_template: "blocksworld_obj_{obj}_c1_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_repeat_color.yaml"
+  description: "Fully specified block relations, but blocks may have same colors"
+
+constr_ceq: # ceq for color equal
+  dataset_template: "blocksworld_obj_{obj}_ceq_mode_{mode}"
+  range_dict:
+    train: [0, 100]
+    test: [500, 600]
+    check: [500, 600]
+  n_obj_list: [8, 12]
+  shuffled: [True]
+  encoding: "domains/blocksworld/pddl_repeat_color.yaml"
+  description: "Build X stacks that are the same color"
+

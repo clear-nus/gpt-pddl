@@ -1,0 +1,15 @@
+---
+# encoded_objects: dictionary of object names, have to be alphabetical
+encoded_objects:
+  {'a': 'red_block_1',
+   'b': 'red_block_2',
+   'c': 'blue_block_1',
+   'd': 'blue_block_2',
+   'e': 'yellow_block_1',
+   'f': 'yellow_block_2',
+   'g': 'orange_block_1',
+   'h': 'orange_block_2',
+   'i': 'red_block_3',
+   'j': 'blue_block_3',
+   'k': 'yellow_block_3',
+   'l': 'orange_block_3'}

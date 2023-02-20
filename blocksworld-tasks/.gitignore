@@ -1,0 +1,10 @@
+.idea/
+.DS_Store
+__pycache__
+Language2PDDL/build
+*.egg-info
+Language2PDDL/*.egg-info
+Language2PDDL/tmp-*
+Language2PDDL/data
+Language2PDDL/results
+Language2PDDL/dist

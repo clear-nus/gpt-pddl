@@ -1,0 +1,6 @@
+---
+# encoded_objects: dictionary of object names, have to be alphabetical
+encoded_objects:
+  {"a": "red block", "b": "blue block", "c": "orange block", "d": "yellow block",
+   "e": "white block", "f": "magenta block", "g": "black block", "h": "cyan block",
+   "i": "green block", "j": "violet block", "k": "silver block", "l": "gold block" }
