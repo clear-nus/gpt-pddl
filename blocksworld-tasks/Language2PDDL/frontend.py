@@ -7,16 +7,6 @@ import json
 
 app = Dash(__name__)
 
-# assume you have a "long-form" data frame
-# see https://plotly.com/python/px-arguments/ for more options
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
-
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
-
 RESULT_DIR = "results/completion/pddl_files/blocksworld"
 dataset_list = os.listdir(RESULT_DIR)
 dataset_list = [ x for x in dataset_list if x.endswith(".txt") ]
