@@ -1,0 +1,62 @@
+
+########### food_pre4 - 16 ##########
+
+******* problem file for debug *********
+(:objects 
+ 	(agent1 - agent)
+ 	(Spoon1 - object)
+ 	(PepperShaker1 - object)
+ 	(Potato2 - object)
+ 	(Lettuce1 - object)
+ 	(Plate1 - object)
+ 	(ButterKnife2 - object)
+ 	(Potato1 - object)
+ 	(Egg1 - object)
+ 	(Apple1 - object)
+ 	(ButterKnife1 - object)
+ 	(CounterTop1 - receptacle)
+ 	(Fridge1 - receptacle)
+ 	(Microwave1 - receptacle)
+ 	(SinkBasin1 - receptacle)
+ 	(Plate1 - receptacle)
+ 	(Pot1 - receptacle)
+ 	(Microwave2 - receptacle)
+ 	(Plate2 - receptacle)
+ 	(Mug1 - receptacle)
+ 	(Pan1 - receptacle)
+ 	(DiningTable1 - receptacle)
+ )
+(:init 
+ 	(sliceable Lettuce1)
+ 	(sliceable Potato1)
+ 	(sliceable Egg1)
+ 	(sliceable Apple1)
+ 	(sliceable Potato2)
+ 	(heatable Potato2)
+ 	(heatable Egg1)
+ 	(heatable Apple1)
+ 	(heatable Potato1)
+ 	(coolable Lettuce1)
+ 	(coolable Potato1)
+ 	(coolable Egg1)
+ 	(coolable Apple1)
+ 	(coolable Potato2)
+ 	(objectAtLocation Spoon1 Mug1)
+ 	(objectAtLocation ButterKnife1 Plate1)
+ 	(objectAtLocation ButterKnife2 Pot1)
+ 	(objectAtLocation PepperShaker1 CounterTop1)
+ 	(objectAtLocation Lettuce1 Pan1)
+ 	(objectAtLocation Egg1 SinkBasin1)
+ 	(objectAtLocation Potato1 Microwave1)
+ 	(objectAtLocation Potato2 Fridge1)
+ 	(objectAtLocation Plate1 Microwave2)
+ 	(objectAtLocation Apple1 Plate2)
+ )
+Output:
+```pddl
+(:goal
+    (and
+        (objectAtLocation ?o - object DiningTable1)
+    )
+)
+```

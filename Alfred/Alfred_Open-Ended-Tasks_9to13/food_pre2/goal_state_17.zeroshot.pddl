@@ -1,0 +1,71 @@
+
+########### food_pre2 - 17 ##########
+
+******* problem file for debug *********
+(:objects 
+ 	(agent1 - agent)
+ 	(Fork1 - object)
+ 	(DishSponge1 - object)
+ 	(Knife1 - object)
+ 	(Tomato1 - object)
+ 	(Egg1 - object)
+ 	(Apple2 - object)
+ 	(Mug1 - object)
+ 	(Apple1 - object)
+ 	(Egg2 - object)
+ 	(ButterKnife1 - object)
+ 	(CounterTop1 - receptacle)
+ 	(Microwave1 - receptacle)
+ 	(SinkBasin1 - receptacle)
+ 	(Bowl1 - receptacle)
+ 	(Bowl2 - receptacle)
+ 	(Pot1 - receptacle)
+ 	(Plate1 - receptacle)
+ 	(Cup1 - receptacle)
+ 	(CoffeeMachine1 - receptacle)
+ 	(Pot2 - receptacle)
+ )
+(:init 
+ 	(sliceable Tomato1)
+ 	(sliceable Egg1)
+ 	(sliceable Apple2)
+ 	(sliceable Apple1)
+ 	(sliceable Egg2)
+ 	(heatable Tomato1)
+ 	(heatable Egg1)
+ 	(heatable Cup1)
+ 	(heatable Apple2)
+ 	(heatable Apple1)
+ 	(heatable Egg2)
+ 	(coolable Tomato1)
+ 	(coolable Egg1)
+ 	(coolable Apple2)
+ 	(coolable Apple1)
+ 	(coolable Egg2)
+ 	(objectAtLocation Mug1 CoffeeMachine1)
+ 	(objectAtLocation Tomato1 CounterTop1)
+ 	(objectAtLocation Apple1 Microwave1)
+ 	(objectAtLocation Egg1 Pot1)
+ 	(objectAtLocation Fork1 Pot2)
+ 	(objectAtLocation Apple2 Bowl1)
+ 	(objectAtLocation Egg2 Bowl2)
+ 	(objectAtLocation ButterKnife1 Cup1)
+ 	(objectAtLocation DishSponge1 Plate1)
+ 	(objectAtLocation Knife1 SinkBasin1)
+ )
+Output:
+Based on the instruction to "Cut some fruits and put them on the plate," and assuming "some fruits" refers to any sliceable fruit objects present in the initial state, the goal in PDDL format ignoring the use of "not" in goal specification would look like:
+
+```lisp
+(:goal (and
+    (isSliced Tomato1)
+    (inReceptacle Tomato1 Plate1)
+    (isSliced Apple1)
+    (inReceptacle Apple1 Plate1)
+    (isSliced Apple2)
+    (inReceptacle Apple2 Plate1)
+    )
+)
+```
+
+This goal specifies that Tomato1, Apple1, and Apple2 must all be sliced (since they are fruits) and placed on the Plate1. Adjustments may be needed depending on the exact requirements, such as if only one fruit is needed on the plate, or if more specific fruits are specified in the given instruction.

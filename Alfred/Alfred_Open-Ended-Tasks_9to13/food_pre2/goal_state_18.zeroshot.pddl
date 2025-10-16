@@ -1,0 +1,70 @@
+
+########### food_pre2 - 18 ##########
+
+******* problem file for debug *********
+(:objects 
+ 	(agent1 - agent)
+ 	(Fork1 - object)
+ 	(DishSponge1 - object)
+ 	(Spatula2 - object)
+ 	(Spatula1 - object)
+ 	(Knife1 - object)
+ 	(Ladle2 - object)
+ 	(Ladle1 - object)
+ 	(Pot1 - object)
+ 	(Potato1 - object)
+ 	(Egg1 - object)
+ 	(Apple1 - object)
+ 	(Potato2 - object)
+ 	(Fridge1 - receptacle)
+ 	(GarbageCan1 - receptacle)
+ 	(StoveBurner1 - receptacle)
+ 	(Microwave1 - receptacle)
+ 	(SinkBasin1 - receptacle)
+ 	(Plate1 - receptacle)
+ 	(Bowl1 - receptacle)
+ 	(Pot1 - receptacle)
+ 	(Bowl2 - receptacle)
+ 	(Plate2 - receptacle)
+ 	(Mug1 - receptacle)
+ 	(Pan1 - receptacle)
+ )
+(:init 
+ 	(sliceable Potato2)
+ 	(sliceable Egg1)
+ 	(sliceable Apple1)
+ 	(sliceable Potato1)
+ 	(heatable Potato2)
+ 	(heatable Egg1)
+ 	(heatable Apple1)
+ 	(heatable Potato1)
+ 	(coolable Potato2)
+ 	(coolable Egg1)
+ 	(coolable Apple1)
+ 	(coolable Potato1)
+ 	(objectAtLocation Egg1 Pan1)
+ 	(objectAtLocation Knife1 Mug1)
+ 	(objectAtLocation Fork1 Pot1)
+ 	(objectAtLocation DishSponge1 GarbageCan1)
+ 	(objectAtLocation Ladle1 Plate1)
+ 	(objectAtLocation Potato1 Fridge1)
+ 	(objectAtLocation Pot1 StoveBurner1)
+ 	(objectAtLocation Ladle2 Bowl1)
+ 	(objectAtLocation Spatula1 SinkBasin1)
+ 	(objectAtLocation Potato2 Bowl2)
+ 	(objectAtLocation Apple1 Microwave1)
+ 	(objectAtLocation Spatula2 Plate2)
+ )
+Output:
+Based on your instruction to "cut some fruits and put them on the plate," here is how you may define the goal state in PDDL:
+
+```lisp
+(:goal
+    (and
+        (isSliced Apple1)
+        (objectAtLocation Apple1 Plate1)
+    )
+)
+```
+
+This goal state assumes that the Apple1 is considered as the 'fruit' that needs to be cut and then placed on 'Plate1'. Adjustments may be needed based on the specific scenario or if there are additional fruits and plates involved.
