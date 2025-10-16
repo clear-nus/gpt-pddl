@@ -3,8 +3,7 @@
 
 Official implementation for the paper: [Translating Natural Language to Planning Goals with Large-Language Models](https://arxiv.org/pdf/2302.05128)
 
-This is an official implementation for 
-A comprehensive benchmark and framework for evaluating language models' ability to translate natural language instructions into formal PDDL (Planning Domain Definition Language) goal specifications across multiple domains.
+This repository provides a comprehensive benchmark and framework for evaluating language models' ability to translate natural language instructions into formal PDDL (Planning Domain Definition Language) goal specifications across multiple domains.
 
 ## Overview
 
