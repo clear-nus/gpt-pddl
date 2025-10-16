@@ -1,5 +1,9 @@
 # Translating natural language to planning goals with large-language models
 
+
+Official implementation for the paper: [Translating Natural Language to Planning Goals with Large-Language Models](https://arxiv.org/pdf/2302.05128)
+
+This is an official implementation for 
 A comprehensive benchmark and framework for evaluating language models' ability to translate natural language instructions into formal PDDL (Planning Domain Definition Language) goal specifications across multiple domains.
 
 ## Overview
@@ -144,7 +148,7 @@ python evaluate.py --scene scene9 --init_path init_states --gen_path gen_results
 Human Evaluated
 
 
-## Evaluation Metrics
+### Evaluation Metrics
 
 The framework evaluates three dimensions:
 
@@ -154,9 +158,9 @@ The framework evaluates three dimensions:
 
 Results include both success rates and detailed error analysis for each capability.
 
-## Configuration Options
+### Configuration Options
 
-### Zero-shot vs One-shot
+#### Zero-shot vs One-shot
 
 Toggle between zero-shot and one-shot learning by adding the `--zero_shot` flag:
 
@@ -164,7 +168,7 @@ Toggle between zero-shot and one-shot learning by adding the `--zero_shot` flag:
 python generate_goal_pddl.py --scene scene9 --init_path init_states --gen_path gen_results --zero_shot
 ```
 
-### Partial Evaluation
+#### Partial Evaluation
 
 Evaluate only a subset of test cases:
 
